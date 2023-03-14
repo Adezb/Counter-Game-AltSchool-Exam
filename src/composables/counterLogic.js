@@ -16,6 +16,7 @@ const state = reactive({
   timeLimit: Math.floor(Math.random() * 18 + 9) - 5,
   gameMessage: "",
   newValue: "",
+  setValuesClicked: false,
 });
 
 //Create functions to update state
@@ -24,6 +25,7 @@ const counterLogic = () => {
   const setValues = () => {
     state.counter = state.startValue;
     state.timeLeft = state.timeLimit;
+    state.setValuesClicked = true;
   };
   //Function to increment counter
   const incrementCounter = () => {
@@ -42,6 +44,7 @@ const counterLogic = () => {
     state.isGameActive = false;
     state.isGameLost = false;
     state.isGameWon = false;
+    state.setValuesClicked = false;
     state.counter = "";
     state.startValue = "";
     state.endValue = "";
@@ -68,6 +71,7 @@ const counterLogic = () => {
       }
     }, 1000);
   };
+
   //Watching to update state when counter reaches end value.
   watch(
     () => state.counter,

@@ -7,10 +7,12 @@
         <div class="game">
             <div class="game__settings">
                 <div class="game__settings__start">
-                    <input type="number" id="start" v-model.number="startValue" placeholder="Start Value" />
+                    <input type="number" id="start" v-model.number="startValue" placeholder="Start Value"
+                        :disabled="setValuesClicked" />
                 </div>
                 <div class="game__settings__end">
-                    <input type="number" id="end" v-model.number="endValue" placeholder="End Value" />
+                    <input type="number" id="end" v-model.number="endValue" placeholder="End Value"
+                        :disabled="setValuesClicked" />
                 </div>
                 <!-- <div class="game__settings__time">
                     <input type="number" id="time" v-model.number="timeLimit" placeholder="Time Limit" />
@@ -58,7 +60,7 @@ import counterLogic from '@/composables/counterLogic';
 export default {
     name: 'Counter',
     setup() {
-        const { setValues, incrementCounter, decrementCounter, startGame, startValue, reset, counter, endValue, timeLeft, timeLimit, isGameActive, isGameLost, isGameWon, gameMessage } = counterLogic();
+        const { setValues, incrementCounter, decrementCounter, startGame, startValue, reset, counter, endValue, timeLeft, timeLimit, isGameActive, isGameLost, isGameWon, gameMessage, setValuesClicked } = counterLogic();
 
         return {
             setValues,
@@ -74,7 +76,8 @@ export default {
             isGameActive,
             isGameLost,
             isGameWon,
-            gameMessage
+            gameMessage,
+            setValuesClicked
         }
 
 
