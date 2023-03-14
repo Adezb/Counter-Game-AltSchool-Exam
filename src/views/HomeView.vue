@@ -18,7 +18,7 @@
       <p>Enter a number you wish to start counting from in the <strong>Start Value</strong> input bar. </p>
       <p>Enter another number you wish to stop in the <strong>End Value</strong> input bar. </p>
       <p>Click the <strong>Set Values</strong> button to set your values </p>
-      <p>Once you set your values, counting time will be alloted to you in Seconds. <br /> Click the
+      <p>Once you set your values, time limit will be alloted to you in Seconds. <br /> Click the
         <strong>START</strong>
         button to play the game.
       </p>
