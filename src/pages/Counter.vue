@@ -24,13 +24,13 @@
 
             <div class="game__counter">
                 <div class="increment__btn">
-                    <button @click="incrementCounter">Increment</button>
+                    <button @click="incrementCounter" :disabled="disableCounterButtons">Increment</button>
                 </div>
                 <div class="game__counter__screen">
                     <span>{{ counter }}</span>
                 </div>
                 <div class="decrement__btn">
-                    <button @click="decrementCounter">Decrement</button>
+                    <button @click="decrementCounter" :disabled="disableCounterButtons">Decrement</button>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@ import counterLogic from '@/composables/counterLogic';
 export default {
     name: 'Counter',
     setup() {
-        const { setValues, incrementCounter, decrementCounter, startGame, startValue, reset, counter, endValue, timeLeft, timeLimit, isGameActive, isGameLost, isGameWon, gameMessage, setValuesClicked } = counterLogic();
+        const { setValues, incrementCounter, decrementCounter, startGame, startValue, reset, counter, endValue, timeLeft, timeLimit, isGameActive, isGameLost, isGameWon, gameMessage, setValuesClicked, disableCounterButtons } = counterLogic();
 
         return {
             setValues,
@@ -77,7 +77,8 @@ export default {
             isGameLost,
             isGameWon,
             gameMessage,
-            setValuesClicked
+            setValuesClicked,
+            disableCounterButtons
         }
 
 
@@ -310,12 +311,6 @@ export default {
     transform: scale(1.1);
 }
 
-
-.operation__btns button:disabled {
-    background: #d9deff;
-    color: #615f5f;
-    cursor: not-allowed;
-}
 
 .game__timer {
     display: flex;

@@ -13,10 +13,11 @@ const state = reactive({
   timer: null,
   startValue: "",
   endValue: "",
-  timeLimit: Math.floor(Math.random() * 2 + 1) - 0,
+  timeLimit: Math.floor(Math.random() * 18 + 15) - 10,
   gameMessage: "",
   newValue: "",
   setValuesClicked: false,
+  disableCounterButtons: true,
 });
 
 //Create functions to update state
@@ -45,10 +46,11 @@ const counterLogic = () => {
     state.isGameLost = false;
     state.isGameWon = false;
     state.setValuesClicked = false;
+    state.disableCounterButtons = true;
     state.counter = "";
     state.startValue = "";
     state.endValue = "";
-    state.timeLimit = Math.floor(Math.random() * 2 + 1) - 0;
+    state.timeLimit = Math.floor(Math.random() * 18 + 15) - 10;
     state.timeLeft = 0;
     state.gameMessage = "";
     clearInterval(state.timer);
@@ -58,18 +60,20 @@ const counterLogic = () => {
     state.isGameActive = true;
     state.isGameLost = false;
     state.isGameWon = false;
+    state.disableCounterButtons = false;
     state.timer = setInterval(() => {
       if (state.timeLeft !== 0) {
         state.timeLeft--;
         state.gameMessage = "Increment the counter before time runs out!";
       } else {
         state.isGameActive = false;
+        state.disableCounterButtons = true;
         state.isGameLost = true;
         state.isGameWon = false;
         state.gameMessage = "Sorry! You lost! Click RESET twice to try again!";
         clearInterval(state.timer);
       }
-    }, 1);
+    }, 10);
   };
 
   //Watching to update state when counter reaches end value.
@@ -80,6 +84,7 @@ const counterLogic = () => {
         state.isGameActive = false;
         state.isGameLost = false;
         state.isGameWon = true;
+        state.disableCounterButtons = true;
         state.gameMessage =
           "Congratulations! You won!" +
           ` You are ${state.timeLeft} seconds faster.` +

@@ -11,7 +11,7 @@ const store = createStore({
     timer: null,
     startValue: "",
     endValue: "",
-    timeLimit: Math.floor(Math.random() * 2 + 1) - 0,
+    timeLimit: Math.floor(Math.random() * 18 + 12) - 9,
     gameMessage: "",
     newValue: "",
     setValuesClicked: false,
@@ -61,7 +61,7 @@ const store = createStore({
             context.commit("setIsGameActive", false);
             context.commit("setIsGameLost", true);
           }
-        }, 1)
+        }, 10)
       );
     },
     incrementCounter(context) {
