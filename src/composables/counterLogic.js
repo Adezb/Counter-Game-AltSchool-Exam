@@ -36,7 +36,7 @@ const counterLogic = () => {
   };
   //Function to decrement counter
   const decrementCounter = () => {
-    if (state.counter > state.startValue) {
+    if (state.counter <= state.startValue) {
       state.counter--;
     }
   };

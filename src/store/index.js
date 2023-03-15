@@ -75,7 +75,7 @@ const store = createStore({
       }
     },
     decrementCounter(context) {
-      if (context.state.counter > context.state.startValue) {
+      if (context.state.counter === context.state.startValue) {
         context.commit("setCounter", context.state.counter - 1);
         if (context.state.counter === context.state.startValue) {
           clearInterval(context.state.timer);

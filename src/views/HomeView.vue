@@ -23,8 +23,8 @@
         button to play the game.
       </p>
       <p>To play the game again after a round, click <strong>RESET</strong> twice. </p>
-      <p><strong>N.B:</strong> Your <strong>End Value</strong> cannot be a negative value e.g <q>-20</q> but your
-        <strong>Start Value</strong> can be negative.
+      <p><strong>UPDATE:</strong> Your <strong>End Value</strong> and <strong>Start Value</strong> can now be <q>negative
+          -</q> or <q>positive +</q>
       </p>
 
     </div>
