@@ -11,7 +11,7 @@ const store = createStore({
     timer: null,
     startValue: "",
     endValue: "",
-    timeLimit: Math.floor(Math.random() * 18 + 9) - 5,
+    timeLimit: Math.floor(Math.random() * 2 + 1) - 0,
     gameMessage: "",
     newValue: "",
     setValuesClicked: false,
