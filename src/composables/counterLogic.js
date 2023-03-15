@@ -34,6 +34,7 @@ const counterLogic = () => {
       state.counter++;
     }
   };
+
   //Function to decrement counter
   const decrementCounter = () => {
     if (state.counter <= state.startValue) {
@@ -64,13 +65,14 @@ const counterLogic = () => {
     state.timer = setInterval(() => {
       if (state.timeLeft !== 0) {
         state.timeLeft--;
-        state.gameMessage = "Increment the counter before time runs out!";
+        state.gameMessage =
+          "Increment or Decrement the counter before time runs out!";
       } else {
         state.isGameActive = false;
         state.disableCounterButtons = true;
         state.isGameLost = true;
         state.isGameWon = false;
-        state.gameMessage = "Sorry! You lost! Click RESET twice to try again!";
+        state.gameMessage = "SORRY! You lost! Click RESET twice to try again!";
         clearInterval(state.timer);
       }
     }, 1000);
