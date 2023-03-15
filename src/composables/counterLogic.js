@@ -69,7 +69,7 @@ const counterLogic = () => {
         state.gameMessage = "Sorry! You lost! Click RESET twice to try again!";
         clearInterval(state.timer);
       }
-    }, 10);
+    }, 1);
   };
 
   //Watching to update state when counter reaches end value.

@@ -61,7 +61,7 @@ const store = createStore({
             context.commit("setIsGameActive", false);
             context.commit("setIsGameLost", true);
           }
-        }, 10)
+        }, 1)
       );
     },
     incrementCounter(context) {
