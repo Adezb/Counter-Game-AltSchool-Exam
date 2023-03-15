@@ -179,8 +179,6 @@ export default {
   .apphome__container .app__description p {
     font-size: 1rem;
     font-weight: 400;
-    /* text-align: left; */
-    /* line-height: 1.2; */
     margin-bottom: 1rem;
   }
 

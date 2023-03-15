@@ -69,7 +69,7 @@ const counterLogic = () => {
         state.gameMessage = "Sorry! You lost! Click RESET twice to try again!";
         clearInterval(state.timer);
       }
-    }, 1000);
+    }, 10);
   };
 
   //Watching to update state when counter reaches end value.
@@ -100,3 +100,74 @@ const counterLogic = () => {
 };
 
 export default counterLogic;
+
+//A conuter game composables that returns the state and actions in the store.
+
+// import { useStore } from "vuex";
+// import { computed } from "vue";
+
+// export default function useCounterLogic() {
+//   const store = useStore();
+//   const counter = computed(() => store.state.counter);
+//   const isGameActive = computed(() => store.state.isGameActive);
+//   const isGameWon = computed(() => store.state.isGameWon);
+//   const isGameLost = computed(() => store.state.isGameLost);
+//   const timeLeft = computed(() => store.state.timeLeft);
+//   const timer = computed(() => store.state.timer);
+//   const startValue = computed({
+//     get: () => store.state.startValue,
+//     set: (value) => store.dispatch("setStartValue", value),
+//   });
+//   const endValue = computed({
+//     get: () => store.state.endValue,
+//     set: (value) => store.dispatch("setEndValue", value),
+//   });
+//   const timeLimit = computed(() => store.state.timeLimit);
+//   const gameMessage = computed(() => store.state.gameMessage);
+//   const newValue = computed(() => store.state.newValue);
+//   const setValuesClicked = computed(() => store.state.setValuesClicked);
+
+//   const setValues = () => {
+//     store.dispatch("setValues", {
+//       startValue: store.state.startValue,
+//       endValue: store.state.endValue,
+//       timeLimit: store.state.timeLimit,
+//     });
+//   };
+
+//   const incrementCounter = () => {
+//     store.dispatch("incrementCounter");
+//   };
+
+//   const decrementCounter = () => {
+//     store.dispatch("decrementCounter");
+//   };
+
+//   const reset = () => {
+//     store.dispatch("reset");
+//   };
+
+//   const startGame = () => {
+//     store.dispatch("startGame");
+//   };
+
+//   return {
+//     counter,
+//     isGameActive,
+//     isGameWon,
+//     isGameLost,
+//     timeLeft,
+//     timer,
+//     startValue,
+//     endValue,
+//     timeLimit,
+//     gameMessage,
+//     newValue,
+//     setValuesClicked,
+//     setValues,
+//     incrementCounter,
+//     decrementCounter,
+//     reset,
+//     startGame,
+//   };
+// }
