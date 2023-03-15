@@ -14,9 +14,6 @@
                     <input type="number" id="end" v-model.number="endValue" placeholder="End Value"
                         :disabled="setValuesClicked" />
                 </div>
-                <!-- <div class="game__settings__time">
-                    <input type="number" id="time" v-model.number="timeLimit" placeholder="Time Limit" />
-                </div> -->
                 <div class="game__settings__button">
                     <button @click="setValues">Set Values</button>
                 </div>
@@ -128,7 +125,6 @@ export default {
 
 .counter-game__container .game .game__settings {
     display: flex;
-    /* flex-direction: row; */
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -179,25 +175,6 @@ export default {
     text-align: center;
 }
 
-/* .counter-game__container .game .game__settings .game__settings__time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
-    background: #d9deff;
-} */
-
-/* .counter-game__container .game .game__settings .game__settings__time input {
-    width: 50%;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #2c3e50;
-} */
 
 .counter-game__container .game .game__settings__button {
     display: flex;

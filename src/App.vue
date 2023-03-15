@@ -81,7 +81,6 @@ export default {
   border-radius: 4px;
   padding: 0.5rem 1rem;
   transition: all 0.2s ease-in-out;
-  /* background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%); */
 }
 
 .nav__bar a:hover {
