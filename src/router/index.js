@@ -15,14 +15,18 @@ const routes = [
     component: Counter,
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/404",
     name: "not-found",
     component: NotFound,
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/404",
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 
